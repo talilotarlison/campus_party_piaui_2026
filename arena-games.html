@@ -1,0 +1,382 @@
+<!doctype html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="theme-color" content="#080b14">
+    <meta name="description" content="Explore jogos, vote nas enquetes e sorteie seu próximo game na Arena Games.">
+    <title>Arena Games | Campus Party Piauí 2026</title>
+    <link rel="icon" href="favicon.png">
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body class="arena-page">
+    <div class="wrap">
+        <header class="top">
+            <a class="brand brand-home" href="index.html" aria-label="Voltar para a página inicial">
+                <div class="logo">
+                    <img src="./assets/_logo.webp" alt="Campus Party Brasil" width="120" height="68">
+                </div>
+                <div>
+                    <b>CAMPUS PARTY <span>/</span> ARENA GAMES</b>
+                    <div class="sub">PIAUÍ 2026 · PLAY / WATCH / REPEAT</div>
+                </div>
+            </a>
+            <nav class="topright" aria-label="Navegação principal">
+                <span class="pill">● CENTRAL GAMER</span>
+                <a class="btn arena-home-link" href="index.html">← PÁGINA INICIAL</a>
+            </nav>
+        </header>
+
+        <section class="banner-slider" aria-label="Banners de jogos em destaque">
+            <div class="banner-slider-track">
+                <a class="banner-slide banner-slide-pubg is-active"
+                    href="https://www.youtube.com/results?search_query=PUBG+gameplay" target="_blank"
+                    rel="noopener noreferrer" aria-label="Banner PUBG; abrir vídeos no YouTube" aria-hidden="false">
+                    <img src="./assets/pubg.jpeg" alt="Banner de PUBG: Battlegrounds">
+                </a>
+                <a class="banner-slide banner-slide-gta"
+                    href="https://www.youtube.com/results?search_query=GTA+VI+gameplay" target="_blank"
+                    rel="noopener noreferrer" aria-label="Banner GTA VI; abrir vídeos no YouTube" aria-hidden="true">
+                    <img src="./assets/gta-vi.jpg" alt="Banner de Grand Theft Auto VI">
+                </a>
+                <div class="banner-slider-controls" aria-label="Controles dos banners">
+                    <button class="banner-dot is-active" type="button" aria-label="Mostrar banner PUBG"
+                        aria-pressed="true" data-banner-index="0"></button>
+                    <button class="banner-dot" type="button" aria-label="Mostrar banner GTA VI" aria-pressed="false"
+                        data-banner-index="1"></button>
+                    <button class="banner-autoplay" id="bannerAutoplay" type="button"
+                        aria-label="Pausar troca automática" title="Pausar troca automática">Ⅱ</button>
+                </div>
+            </div>
+        </section>
+
+        <main>
+            <section class="arena-hero">
+                <div class="arena-hero-copy">
+                    <div class="eyebrow">ARENA GAMES · SEU PRÓXIMO PLAY COMEÇA AQUI</div>
+                    <h1>Entre no jogo.<br><span>Encontre sua próxima partida.</span></h1>
+                    <p>Explore universos, acompanhe gameplays e encontre vídeos dos seus jogos favoritos no YouTube.</p>
+                    <a class="btn arena-cta" href="#explorar">EXPLORAR JOGOS <span>↓</span></a>
+                    <div class="arena-meta">
+                        <span>GTA</span><span>PUBG</span><span>FUTEBOL</span>
+                    </div>
+                </div>
+                <div class="arena-showcase" aria-label="Jogos em destaque">
+                    <a class="feature-game feature-pubg"
+                        href="https://www.youtube.com/results?search_query=PUBG+gameplay" target="_blank"
+                        rel="noopener noreferrer" aria-label="Buscar PUBG gameplay no YouTube">
+                        <img class="feature-image" src="./assets/pubg.jpeg" alt="">
+                        <span class="feature-index">01 / BATTLE ROYALE</span>
+                        <strong>PUBG</strong>
+                        <span class="feature-action">VER GAMEPLAYS ↗</span>
+                    </a>
+                    <a class="feature-game feature-gta"
+                        href="https://www.youtube.com/results?search_query=GTA+6+gameplay" target="_blank"
+                        rel="noopener noreferrer" aria-label="Buscar GTA 6 gameplay no YouTube">
+                        <img class="feature-image" src="./assets/gta-vi.jpg" alt="">
+                        <span class="feature-index">02 / MUNDO ABERTO</span>
+                        <strong>GTA VI</strong>
+                        <span class="feature-action">GTA · VER NO YOUTUBE ↗</span>
+                    </a>
+                    <a class="feature-game feature-football"
+                        href="https://www.youtube.com/results?search_query=FIFA+EA+SPORTS+FC+gameplay" target="_blank"
+                        rel="noopener noreferrer" aria-label="Buscar FIFA e EA Sports FC no YouTube">
+                        <span class="feature-index">03 / FUTEBOL</span>
+                        <strong>FIFA 27</strong>
+                        <span class="feature-action">JOGADAS E GOLS ↗</span>
+                    </a>
+                </div>
+                <div class="arena-orbit" aria-hidden="true"></div>
+            </section>
+
+            <section class="arena-explore" id="explorar">
+                <div class="arena-section-heading">
+                    <div>
+                        <div class="kicker">ESCOLHA SEU UNIVERSO</div>
+                        <h2>O que vamos jogar?</h2>
+                        <p class="desc">Encontre um game e abra vídeos e partidas direto no YouTube.</p>
+                    </div>
+                    <button class="btn surprise-btn" id="surprise" type="button">✦ ESCOLHER POR MIM</button>
+                </div>
+
+                <div class="game-tools">
+                    <label class="game-search">
+                        <span aria-hidden="true">⌕</span>
+                        <input id="gameSearch" type="search" placeholder="Buscar um jogo..." autocomplete="off"
+                            aria-label="Buscar um jogo">
+                    </label>
+                    <div class="game-filters" role="group" aria-label="Filtrar jogos">
+                        <button class="game-filter active" type="button" data-filter="all" aria-pressed="true">TODOS
+                            <span>09</span></button>
+                        <button class="game-filter" type="button" data-filter="action" aria-pressed="false">AÇÃO
+                            <span>07</span></button>
+                        <button class="game-filter" type="button" data-filter="football" aria-pressed="false">FUTEBOL
+                            <span>02</span></button>
+                    </div>
+                </div>
+                <p class="game-results" id="gameResults" aria-live="polite">09 jogos para explorar</p>
+
+                <div class="game-grid" id="gameGrid">
+                    <article class="game-card" data-category="action"
+                        data-search="gta v grand theft auto cinco mundo aberto">
+                        <div class="game-art art-gta-v">
+                            <span class="art-label">MUNDO ABERTO</span><strong>GTA V</strong>
+                            <span class="art-corner">LOS SANTOS</span>
+                        </div>
+                        <div class="game-info">
+                            <div><span class="game-genre">AÇÃO · AVENTURA</span>
+                                <h3>GTA V</h3>
+                            </div>
+                            <a class="game-watch" href="https://www.youtube.com/results?search_query=GTA+V+gameplay"
+                                target="_blank" rel="noopener noreferrer" aria-label="Buscar GTA V no YouTube">VER
+                                VÍDEOS <span>↗</span></a>
+                        </div>
+                    </article>
+                    <article class="game-card" data-category="action"
+                        data-search="gta vi gta 6 grand theft auto seis vice city">
+                        <div class="game-art art-gta-vi">
+                            <span class="art-label">MUNDO ABERTO</span><strong>GTA VI</strong>
+                            <span class="art-corner">VICE CITY</span>
+                        </div>
+                        <div class="game-info">
+                            <div><span class="game-genre">AÇÃO · AVENTURA</span>
+                                <h3>GTA VI</h3>
+                            </div>
+                            <a class="game-watch" href="https://www.youtube.com/results?search_query=GTA+VI+gameplay"
+                                target="_blank" rel="noopener noreferrer" aria-label="Buscar GTA VI no YouTube">VER
+                                VÍDEOS <span>↗</span></a>
+                        </div>
+                    </article>
+                    <article class="game-card" data-category="action"
+                        data-search="pubg battlegrounds battle royale sobrevivencia">
+                        <div class="game-art art-pubg">
+                            <span class="art-label">BATTLE ROYALE</span><strong>PUBG</strong>
+                            <span class="art-corner">DROP IN</span>
+                        </div>
+                        <div class="game-info">
+                            <div><span class="game-genre">AÇÃO · SOBREVIVÊNCIA</span>
+                                <h3>PUBG: BATTLEGROUNDS</h3>
+                            </div>
+                            <a class="game-watch"
+                                href="https://www.youtube.com/results?search_query=PUBG+Battlegrounds+gameplay"
+                                target="_blank" rel="noopener noreferrer" aria-label="Buscar PUBG no YouTube">VER VÍDEOS
+                                <span>↗</span></a>
+                        </div>
+                    </article>
+                    <article class="game-card" data-category="football" data-search="fifa ea sports fc futebol soccer">
+                        <div class="game-art art-fifa">
+                            <span class="art-label">FUTEBOL</span><strong>FIFA 27</strong>
+                            <span class="art-corner">MATCH DAY</span>
+                        </div>
+                        <div class="game-info">
+                            <div><span class="game-genre">ESPORTE · FUTEBOL</span>
+                                <h3>FIFA / EA SPORTS FC</h3>
+                            </div>
+                            <a class="game-watch"
+                                href="https://www.youtube.com/results?search_query=FIFA+EA+SPORTS+FC+gameplay"
+                                target="_blank" rel="noopener noreferrer"
+                                aria-label="Buscar FIFA e EA Sports FC no YouTube">VER VÍDEOS <span>↗</span></a>
+                        </div>
+                    </article>
+                    <article class="game-card" data-category="football"
+                        data-search="pes efootball pro evolution soccer futebol">
+                        <div class="game-art art-pes">
+                            <span class="art-label">FUTEBOL</span><strong>PES 27</strong>
+                            <span class="art-corner">KICK OFF</span>
+                        </div>
+                        <div class="game-info">
+                            <div><span class="game-genre">ESPORTE · FUTEBOL</span>
+                                <h3>PES / eFOOTBALL</h3>
+                            </div>
+                            <a class="game-watch"
+                                href="https://www.youtube.com/results?search_query=PES+eFootball+gameplay"
+                                target="_blank" rel="noopener noreferrer"
+                                aria-label="Buscar PES e eFootball no YouTube">VER VÍDEOS <span>↗</span></a>
+                        </div>
+                    </article>
+                    <article class="game-card" data-category="action" data-search="god of war gow kratos">
+                        <div class="game-art art-god-war">
+                            <span class="art-label">AÇÃO · MITOLOGIA</span><strong>GOW</strong>
+                            <span class="art-corner">KRATOS</span>
+                        </div>
+                        <div class="game-info">
+                            <div><span class="game-genre">AÇÃO · AVENTURA</span>
+                                <h3>GOD OF WAR</h3>
+                            </div>
+                            <a class="game-watch"
+                                href="https://www.youtube.com/results?search_query=God+of+War+gameplay" target="_blank"
+                                rel="noopener noreferrer" aria-label="Buscar God of War no YouTube">VER VÍDEOS
+                                <span>↗</span></a>
+                        </div>
+                    </article>
+                    <article class="game-card" data-category="action"
+                        data-search="blade runner bladerunner jogo gameplay">
+                        <div class="game-art art-blade-runner">
+                            <span class="art-label">FICÇÃO CIENTÍFICA</span><strong>2049</strong>
+                            <span class="art-corner">BLADE RUNNER</span>
+                        </div>
+                        <div class="game-info">
+                            <div><span class="game-genre">AVENTURA · INVESTIGAÇÃO</span>
+                                <h3>BLADE RUNNER</h3>
+                            </div>
+                            <a class="game-watch"
+                                href="https://www.youtube.com/results?search_query=Blade+Runner+gameplay"
+                                target="_blank" rel="noopener noreferrer"
+                                aria-label="Buscar Blade Runner no YouTube">VER VÍDEOS <span>↗</span></a>
+                        </div>
+                    </article>
+                    <article class="game-card" data-category="action" data-search="free fire garena battle royale">
+                        <div class="game-art art-free-fire">
+                            <span class="art-label">BATTLE ROYALE</span><strong>FF</strong>
+                            <span class="art-corner">BOOYAH!</span>
+                        </div>
+                        <div class="game-info">
+                            <div><span class="game-genre">AÇÃO · SOBREVIVÊNCIA</span>
+                                <h3>FREE FIRE</h3>
+                            </div>
+                            <a class="game-watch" href="https://www.youtube.com/results?search_query=Free+Fire+gameplay"
+                                target="_blank" rel="noopener noreferrer" aria-label="Buscar Free Fire no YouTube">VER
+                                VÍDEOS <span>↗</span></a>
+                        </div>
+                    </article>
+                    <article class="game-card" data-category="action" data-search="red dead redemption rdr faroeste">
+                        <div class="game-art art-red-dead">
+                            <span class="art-label">MUNDO ABERTO</span><strong>RDR</strong>
+                            <span class="art-corner">WILD WEST</span>
+                        </div>
+                        <div class="game-info">
+                            <div><span class="game-genre">AÇÃO · AVENTURA</span>
+                                <h3>RED DEAD REDEMPTION</h3>
+                            </div>
+                            <a class="game-watch"
+                                href="https://www.youtube.com/results?search_query=Red+Dead+Redemption+gameplay"
+                                target="_blank" rel="noopener noreferrer"
+                                aria-label="Buscar Red Dead Redemption no YouTube">VER VÍDEOS <span>↗</span></a>
+                        </div>
+                    </article>
+                </div>
+                <div class="no-games" id="noGames" hidden>Nenhum jogo encontrado. Tente outra busca ou filtro.</div>
+            </section>
+
+            <section class="arena-activities" aria-labelledby="activityTitle">
+                <div class="arena-section-heading">
+                    <div>
+                        <div class="kicker">PARTICIPE DA ARENA</div>
+                        <h2 id="activityTitle">Enquetes & sorteios</h2>
+                        <p class="desc">Vote nas enquetes e deixe o acaso escolher o próximo jogo.</p>
+                    </div>
+                </div>
+                <div class="arena-activity-grid">
+                    <article class="card poll-card">
+                        <div class="kicker">ENQUETE 01 · SUA ESCOLHA</div>
+                        <h3 class="title">Qual jogo você escolheria agora?</h3>
+                        <p class="desc">Vote no seu favorito da Arena.</p>
+                        <form class="poll-form" data-poll-form="favorite">
+                            <div class="poll-options">
+                                <label><input type="radio" name="poll-favorite" value="gta-vi"><span>GTA
+                                        VI</span></label>
+                                <label><input type="radio" name="poll-favorite" value="god-of-war"><span>God of
+                                        War</span></label>
+                                <label><input type="radio" name="poll-favorite" value="pubg"><span>PUBG</span></label>
+                                <label><input type="radio" name="poll-favorite" value="red-dead"><span>Red Dead
+                                        Redemption</span></label>
+                            </div>
+                            <button class="btn poll-submit" type="submit">REGISTRAR VOTO</button>
+                        </form>
+                        <div class="poll-results" data-poll-results="favorite" hidden>
+                            <div class="poll-result" data-result="gta-vi">
+                                <div><span>GTA VI</span><strong></strong></div>
+                                <div class="poll-bar"><span></span></div>
+                            </div>
+                            <div class="poll-result" data-result="god-of-war">
+                                <div><span>God of War</span><strong></strong></div>
+                                <div class="poll-bar"><span></span></div>
+                            </div>
+                            <div class="poll-result" data-result="pubg">
+                                <div><span>PUBG</span><strong></strong></div>
+                                <div class="poll-bar"><span></span></div>
+                            </div>
+                            <div class="poll-result" data-result="red-dead">
+                                <div><span>Red Dead Redemption</span><strong></strong></div>
+                                <div class="poll-bar"><span></span></div>
+                            </div>
+                        </div>
+                        <p class="poll-message" data-poll-message="favorite" aria-live="polite"></p>
+                    </article>
+
+                    <article class="card poll-card">
+                        <div class="kicker">ENQUETE 02 · SEU ESTILO</div>
+                        <h3 class="title">Qual tipo de jogo combina mais com você?</h3>
+                        <p class="desc">Escolha seu estilo de gameplay.</p>
+                        <form class="poll-form" data-poll-form="style">
+                            <div class="poll-options">
+                                <label><input type="radio" name="poll-style" value="action"><span>Ação e
+                                        aventura</span></label>
+                                <label><input type="radio" name="poll-style" value="battle-royale"><span>Battle
+                                        royale</span></label>
+                                <label><input type="radio" name="poll-style"
+                                        value="football"><span>Futebol</span></label>
+                                <label><input type="radio" name="poll-style" value="scifi"><span>Ficção
+                                        científica</span></label>
+                            </div>
+                            <button class="btn poll-submit" type="submit">REGISTRAR VOTO</button>
+                        </form>
+                        <div class="poll-results" data-poll-results="style" hidden>
+                            <div class="poll-result" data-result="action">
+                                <div><span>Ação e aventura</span><strong></strong></div>
+                                <div class="poll-bar"><span></span></div>
+                            </div>
+                            <div class="poll-result" data-result="battle-royale">
+                                <div><span>Battle royale</span><strong></strong></div>
+                                <div class="poll-bar"><span></span></div>
+                            </div>
+                            <div class="poll-result" data-result="football">
+                                <div><span>Futebol</span><strong></strong></div>
+                                <div class="poll-bar"><span></span></div>
+                            </div>
+                            <div class="poll-result" data-result="scifi">
+                                <div><span>Ficção científica</span><strong></strong></div>
+                                <div class="poll-bar"><span></span></div>
+                            </div>
+                        </div>
+                        <p class="poll-message" data-poll-message="style" aria-live="polite"></p>
+                    </article>
+
+                    <article class="card game-raffle">
+                        <div class="kicker">SORTEIO DA RODADA</div>
+                        <h3 class="title">Qual vai ser o próximo play?</h3>
+                        <p class="desc">Sorteie um dos jogos da lista e descubra sua próxima aventura.</p>
+                        <div class="raffle-stage">
+                            <span class="raffle-icon" aria-hidden="true">✦</span>
+                            <strong id="drawnGame" aria-live="polite">O jogo sorteado aparece aqui</strong>
+                            <span id="drawnGenre">PRONTO PARA GIRAR?</span>
+                        </div>
+                        <button class="btn raffle-button" id="drawGame" type="button">🎲 SORTEAR JOGO</button>
+                        <p class="raffle-note">Sorteio aleatório entre os jogos disponíveis nesta página.</p>
+                    </article>
+                </div>
+                <p class="poll-disclaimer">As enquetes contabilizam votos apenas nesta sessão do navegador; não são uma
+                    votação global.</p>
+            </section>
+
+            <section class="arena-tip">
+                <span class="tip-mark">✦</span>
+                <div><strong>Pronto para dar play?</strong>
+                    <p>Os links abrem uma busca no YouTube para você escolher gameplays, transmissões e conteúdos
+                        recentes.</p>
+                </div>
+                <a href="#explorar">ESCOLHER UM JOGO ↑</a>
+            </section>
+        </main>
+
+        <footer class="foot">
+            <span>CP WEEKEND PIAUÍ 3 · ARENA GAMES</span><span>JOGUE, EXPLORE E COMPARTILHE.</span>
+            <a href="index.html">VOLTAR À PÁGINA INICIAL ↗</a>
+        </footer>
+    </div>
+    <script src="arena-games.js"></script>
+</body>
+
+</html>

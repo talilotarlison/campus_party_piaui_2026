@@ -1,0 +1,270 @@
+<!doctype html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="theme-color" content="#090d18">
+    <title>Campus Party Piauí 2026 | Home Edition</title>
+    <link rel="icon" href="favicon.png">
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <div class="wrap">
+        <header class="top">
+            <div class="brand">
+                <div class="logo">
+                    <img src="./assets/_logo.webp" alt="Campus Party Piauí 2026" width="120" height="68">
+                </div>
+                <div>
+                    <b>CAMPUS PARTY <span style="color:var(--cyan)">/</span> HOME EDITION</b>
+                    <div class="sub">
+                        PIAUÍ 2026 · DIGITAL EXPERIENCE
+                    </div>
+                </div>
+            </div>
+            <div class="topright">
+                <span class="pill">● CENTRAL DE ACOMPANHAMENTO</span><a class="btn arena-link"
+                    href="arena-games.html">ARENA GAMES <span>↗</span></a><button class="btn" id="export">↓ EXPORTAR
+                    BACKUP</button>
+            </div>
+        </header>
+        <section class="hero">
+            <div class="eyebrow">
+                SUA EXPERIÊNCIA COMEÇA AQUI · 01 / 02
+            </div>
+            <h1>O futuro não espera.<br><span>Conecte-se a ele.</span></h1>
+            <p>
+                Do seu espaço, acompanhe ideias, descubra tecnologias, participe das comunidades e transforme inspiração
+                em projetos. Dois dias de imersão no universo da inovação.
+            </p>
+            <div class="tags">
+                <span class="tag">21–22 NOV 2026</span><span class="tag">TERESINA · PIAUÍ</span><span class="tag">ONLINE
+                    / HOME EDITION</span>
+            </div>
+        </section>
+        <section class="stats">
+            <div class="stat">
+                <small>Atividades concluídas</small>
+                <div class="num" id="sEvents">
+                    0
+                </div>
+                <div class="hint">
+                    na programação
+                </div>
+            </div>
+            <div class="stat">
+                <small>Bingo tecnológico</small>
+                <div class="num" id="sBingo">
+                    0/16
+                </div>
+                <div class="hint">
+                    temas encontrados
+                </div>
+            </div>
+            <div class="stat">
+                <small>Metas pessoais</small>
+                <div class="num" id="sGoals">
+                    0/7
+                </div>
+                <div class="hint">
+                    desafios concluídos
+                </div>
+            </div>
+            <div class="stat">
+                <small>Progresso geral</small>
+                <div class="num" id="sTotal">
+                    0%
+                </div>
+                <div class="hint">
+                    da sua experiência
+                </div>
+            </div>
+        </section>
+        <div class="layout">
+            <main class="col">
+                <section class="card">
+                    <div class="cardhead">
+                        <div>
+                            <div class="kicker">
+                                AGENDA PESSOAL
+                            </div>
+                            <div class="title">
+                                Sua programação
+                            </div>
+                            <div class="desc">
+                                Marque cada bloco quando terminar. Horários intermediários são sugestões pessoais.
+                            </div>
+                        </div>
+                        <div class="tabs">
+                            <button class="tab active" data-day="sat">SÁB 21</button><button class="tab"
+                                data-day="sun">DOM 22</button>
+                        </div>
+                    </div>
+                    <div class="noteinfo" id="dayNote">
+                        FOCO DO DIA · Identificar tecnologias e ideias que possam virar projetos.
+                    </div>
+                    <div class="events" id="events"></div>
+                </section>
+                <section class="card">
+                    <div class="cardhead">
+                        <div>
+                            <div class="kicker">
+                                GAMIFICAÇÃO
+                            </div>
+                            <div class="title">
+                                Bingo tecnológico
+                            </div>
+                            <div class="desc">
+                                Marque os temas que aparecerem nas palestras e workshops.
+                            </div>
+                        </div>
+                        <span class="pill" id="bingoCount">0 / 16</span>
+                    </div>
+                    <div class="bingo" id="bingo"></div>
+                    <div style="display:flex;justify-content:space-between;align-items:center;gap:10px;margin-top:13px">
+                        <span class="muted">Complete uma linha, coluna ou o quadro inteiro.</span><button class="btn"
+                            id="resetBingo">REINICIAR</button>
+                    </div>
+                </section>
+                <section class="card">
+                    <div class="cardhead">
+                        <div>
+                            <div class="kicker">
+                                SEU LABORATÓRIO DE IDEIAS
+                            </div>
+                            <div class="title">
+                                Anotações e insights
+                            </div>
+                            <div class="desc">
+                                Registre aprendizados, perguntas, links e ideias. Salvamento automático neste navegador.
+                            </div>
+                        </div>
+                        <span class="pill" id="saveStatus">SALVO LOCALMENTE</span>
+                    </div>
+                    <textarea id="notes"
+                        placeholder="Palestra / tema:&#10;Ideia principal:&#10;O que aprendi:&#10;Como posso aplicar:&#10;Pergunta que ficou:"></textarea>
+                    <div style="display:flex;justify-content:space-between;align-items:center;margin-top:10px">
+                        <span class="muted">Anote primeiro com suas palavras; aprofunde depois.</span><button
+                            class="btn" id="copy">COPIAR NOTAS</button>
+                    </div>
+                </section>
+            </main>
+            <aside class="col side">
+                <section class="card">
+                    <div class="cardhead">
+                        <div>
+                            <div class="kicker">
+                                MISSÃO PESSOAL
+                            </div>
+                            <div class="title">
+                                Desafios da edição
+                            </div>
+                            <div class="desc">
+                                Pequenas metas para aproveitar melhor.
+                            </div>
+                        </div>
+                    </div>
+                    <div class="muted" id="goalPct">
+                        0% CONCLUÍDO
+                    </div>
+                    <div class="progress">
+                        <div class="bar" id="goalBar"></div>
+                    </div>
+                    <div class="goals" id="goals"></div>
+                </section>
+                <section class="card">
+                    <div class="cardhead">
+                        <div>
+                            <div class="kicker">
+                                DO INSIGHT À AÇÃO
+                            </div>
+                            <div class="title">
+                                Ideathon pessoal
+                            </div>
+                            <div class="desc">
+                                Transforme uma necessidade em solução.
+                            </div>
+                        </div>
+                    </div>
+                    <div class="idea">
+                        <b>Seu mini desafio</b>
+                        <p>
+                            Escolha um problema real que apareceu em uma palestra. Pense em quem é afetado, como a
+                            tecnologia pode ajudar e qual seria a versão mais simples da solução.
+                        </p>
+                        <button class="btn" id="newIdea">↗ SORTEAR DESAFIO</button>
+                    </div>
+                    <label class="muted" style="display:block;margin:13px 0 6px">DESAFIO ATUAL</label>
+                    <div id="prompt" style="font:600 13px/1.5 'Space Grotesk';min-height:38px">
+                        Como a IA pode tornar o aprendizado mais acessível?
+                    </div>
+                    <label class="muted" style="display:block;margin:13px 0 6px">NOME DA SUA IDEIA</label><input
+                        id="projectName" placeholder="Ex.: StudyMate AI"><label class="muted"
+                        style="display:block;margin:12px 0 6px">RESUMO DA SOLUÇÃO</label><textarea class="smallarea"
+                        id="projectDesc" placeholder="Problema, público, solução e primeiro passo..."></textarea>
+                </section>
+                <section class="card">
+                    <div class="cardhead">
+                        <div>
+                            <div class="kicker">
+                                CONECTE-SE
+                            </div>
+                            <div class="title">
+                                Central de links
+                            </div>
+                            <div class="desc">
+                                Atalhos úteis para acompanhar o evento.
+                            </div>
+                        </div>
+                    </div>
+                    <div class="resources">
+                        <a class="resource"
+                            href="https://brasil.campus-party.org/cpweekend/piaui3/horario-de-funcionamento/"
+                            target="_blank" rel="noopener">Programação oficial <span>↗</span></a><a class="resource"
+                            href="https://brasil.campus-party.org/cpweekend/piaui3/" target="_blank"
+                            rel="noopener">Campus Party Piauí <span>↗</span></a><a class="resource"
+                            href="https://www.youtube.com/@CampusPartyBrasil" target="_blank" rel="noopener">Canal
+                            Campus Party Brasil <span>↗</span></a><a class="resource"
+                            href="https://www.linkedin.com/company/campus-party/" target="_blank" rel="noopener">Campus
+                            Party no LinkedIn <span>↗</span></a><a class="resource" href="https://github.com/"
+                            target="_blank" rel="noopener">GitHub · projetos <span>↗</span></a>
+                    </div>
+                    <p class="muted" style="margin-bottom:0">
+                        As transmissões dependem da disponibilização oficial de cada atividade. Confira os canais e
+                        avisos do evento.
+                    </p>
+                </section>
+                <section class="card">
+                    <div class="cardhead">
+                        <div>
+                            <div class="kicker">
+                                ANTES DE COMEÇAR
+                            </div>
+                            <div class="title">
+                                Checklist de preparação
+                            </div>
+                        </div>
+                    </div>
+                    <div class="goals" id="prep">
+                        <label class="goal"><input type="checkbox" data-prep="internet"><span>Testar internet, áudio e
+                                vídeo</span></label><label class="goal"><input type="checkbox"
+                                data-prep="desk"><span>Preparar mesa, água e fones</span></label><label
+                            class="goal"><input type="checkbox" data-prep="links"><span>Deixar os links oficiais
+                                acessíveis</span></label><label class="goal"><input type="checkbox"
+                                data-prep="breaks"><span>Planejar pausas e refeições</span></label>
+                    </div>
+                </section>
+            </aside>
+        </div>
+        <footer class="foot">
+            <span>CP WEEKEND PIAUÍ 3 · HOME EDITION</span><span>FEITO PARA APRENDER, CONECTAR E CRIAR.</span><span>SEUS
+                DADOS FICAM NESTE NAVEGADOR</span>
+        </footer>
+    </div>
+    <div class="toast" id="toast"></div>
+    <script src="app.js"></script>
+</body>
+
+</html>
